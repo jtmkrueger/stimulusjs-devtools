@@ -1,41 +1,22 @@
 {
+  "description": "Developer Tools For StimulusJS",
   "manifest_version": 2,
-  "name": "stimulusjs_devtools",
-  "description": "Developer tools for StimulusJS",
-  "version": "0.0.1",
+  "name": "stimulusjs-devtools",
+  "version": "1.0",
+  "author": "John Krueger",
+  "homepage_url": "https://github.com/jtmkrueger/stimulusjs-devtools",
   "icons": {
-    "64": "icons/icon.png"
+    "48": "icons/icon.svg"
   },
+  
   "background": {
-    "scripts": [
-      "background_script.js"
-    ]
+    "scripts": ["background_scripts/background.js"]
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.mozilla.org/*"
-      ],
-      "js": [
-        "content_script.js"
-      ]
-    }
+  
+  "permissions": [
+      "<all_urls>"
   ],
-  "browser_action": {
-    "default_icon": {
-      "64": "icons/icon.png"
-    },
-    "default_popup": "browserAction/index.html",
-    "default_title": "stimulusjs_devtools"
-  },
-  "page_action": {
-    "default_icon": {
-      "64": "icons/icon.png"
-    },
-    "default_popup": "pageAction/index.html",
-    "default_title": "stimulusjs_devtools"
-  },
-  "options_ui": {
-    "page": "options/index.html"
-  }
+  
+  "devtools_page": "devtools/stimulusjs-tools.html"
+
 }
